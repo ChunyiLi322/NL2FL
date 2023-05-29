@@ -1,0 +1,9 @@
+If void is true and ec_poweron is true,then ca_mode_unplugin is true and next plugin is not true.
+If plugin is not true and ppu_plugin is true,then ca_mode_wait is true and next plugin_and_wait_mode are true.
+If plugin and wait_mode and ppu_plugin and ppu_contin and ppu_airok and ppu_occok and ppu_hwfs are true,then ca_mode_ma is true and next plugin and ma_mode are true.
+If plugin and manual_mode and cb_initialac are true,then ca_mode_iniac is true and next plugin and iniac are true.
+If plugin and iniac and ca_backma and cb_backma and cp_backma and cc_backma are true,then ca_mode_ma is true and next plugin and manual_mode are true.
+If plugin and iniac and ppu_stop are true,then ca_mode_unplugin is true and next plugin is not true.
+If plugin and iniac and cb_validbp are true,then ca_mode_ac is true and next plugin and ac are true.
+If plugin and ac and ppu_stop are true,then ca_mode_unplugin is true and next plugin is not true.
+If plugin and ac and ca_backma and cb_backma and cp_backma and cc_backma are true,then ca_mode_ma is true and next plugin and manual_mode are true.

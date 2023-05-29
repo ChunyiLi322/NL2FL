@@ -1,0 +1,20 @@
+If notplugin is true and ppu_plugin is true, next plugin is true.
+If plug_in is true and ppu_plugin is not true then cp_alarm_unplugin is true and next plugin is not true.
+If plug_in is not true and ppu_plugin is true then cp_alarm_unplugin is not true and next plugin is true.
+if notplugin and ppu_plugin and ppu_contin are true, next connectingok is true.
+If connectingok is true and ppu_contin is not true, then cp_alarm_contin is true and next connectingok is not true.
+If connectingok is not true and ppu_contin is true, then cp_alarm_contin is not true and next connectingok is true.
+If notplugin and ppu_plugin and ppu_airok are true, then next airok is true.
+If airok is true and ppu_airok is not true, polling_impedance is true and next airok is not true.
+If airok is not true and ppu_airok is true, then next airok is true. 
+If airok is not true and t_gt_10 is true, then cp_alarm_airok is true and next more_than_10 is true.
+If more_than_10 is true and ppu_airok is true, then cp_alarm_airok is not true and next airok is true.
+If notplugin and ppu_plugin and ppu_backemf_gt_0 are true, then next backemf is true.
+If backEMF is true and ppu_backemf_gt_0 is not true, then cp_alarm_backemf is true and next backemf is not true.
+If backemf is not true and ppu_backemf_gt_0 is true, then cp_alarm_backemf is not true and next backEMF is true.
+If notplugin and ppu_plugin and ppu_impedance_gt_0 are true, next impedance is true.
+If impedance is true and ppu_impedance_gt_0 is not true, then cp_alarm_impedance is true and next impedance is not true.
+If impedance is not true and ppu_impedance_gt_0 is true, then cp_alarm_impedance is not true and next impedance is true.
+If notplugin and ppu_plugin and ppu_occok are true, next occok is true.
+If occok is true and ppu_occok is not true, cp_alarm_occok is true and next occok is not true.
+if occok is not true and ppu_occok is true, then cp_alarm_occok is not true and next occok is true.

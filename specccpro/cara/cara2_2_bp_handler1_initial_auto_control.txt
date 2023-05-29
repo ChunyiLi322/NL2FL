@@ -1,0 +1,16 @@
+If wait_button_input and cb_button_overrideyes are true, then cc_window_override is not true and next yes_clicked is true.
+If end_corroboration and t_gt_180 and corrodone are true, then next status_ok is true.
+if status_ok and t_gt_40 are true, and cb_vuffsource is not true, then cb_alarm_nocuff and cc_window_override  are true and next wait_button_input is true.
+If reset_clicked and t_gt_40 are true, then next wait_button_input is true.
+If wait_button_input and cc_button_reset are true, next reset_clicked is true.
+If wait_button_input and cc_button_overrideno are true, then cc_button_overrideno and cc_window_override are not true, and cb_returnmanual1 is true, and next wait is true.
+if wait and ppu_plugin and ppu_occok and ca_mode_manual and ppu_impedance_gt_0 are true, then next status_ok is true.
+if status_ok and cc_button_startac are true, then next status_ok is true.
+if status_ok and cb_cuffsource are true, then cb_initialac is true, next cuff_available is true.
+if cuff_available is true, next first_corrboration is true.
+If first_corrboration is true, next end_corroboration is true.
+If reset_clicked and cb_cuffsource are true, then cb_initialac is true and next cuff_available is true.
+If yes_clicked and cb_pwsource are true, and cb_alsource is not true, then cb_initialac is true and next get_higher_bp is true.
+If yes_clicked and cb_alsource are  true, then cb_initialac is true and next get_higher_bp is true. 
+If get_higher_bp is true, then next end_corroboration is true.
+If yes_clicked is true, and cb_alsource and cb_pwsource are not true, then cb_alarm_nobp is true, and next wait is true.

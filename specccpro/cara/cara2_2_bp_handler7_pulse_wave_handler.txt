@@ -1,0 +1,20 @@
+if wait and ca_mode_ac are true, next in_auto_control is true.
+If in_auto_control and cb_pwsource are true, and cb_alsource and cb_ctrlsource_pw are not true, then next pw_available is true.
+If pw_available is true, and cb_pwvalue_valid is false, next out_of_range is true.
+If out_of_range is true, and cb_pwvalue_valid is false, then cc_window_override is true, and next override_window is true.
+If override_window and cc_button_overrideno are true, then next cc_button_overrideno and cc_window_override are false, and next end_corroboration is true. 
+If override_window and cc_button_overrideyes are true, then next cc_button_overrideyes and cc_window_override are false, and next end_corroboration is true. 
+If pw_available and cb_pwvalue_valid are true, then cb_ctrlsource_pw is true, and next end_corroboration is true.
+if end_corroboration is true, then next in_auto_control is true.
+If in_auto_control and cb_ctrlsource_pw are true, next al_in_ac is true.
+If al_in_ac and t_ge_15 and cb_ctrlsource_pw are true, next al_ok is true.
+If al_ok and cb_ctrlvalue_valid are true, next al_in_ac is true.
+If al_ok is true, and cb_ctrlvalue_valid is not true, next al_invalid1 is true.
+If al_invalid1 and cb_ctrlvalue_valid and cb_ctrlsource_pw are true, then next al_ok is true.
+If al_invalid1 is true, and cb_ctrlsource_pw is false, next in_auto_control is true.
+If al_invalid1 and t_ge_90 are true, then cb_alarm1_alinvalid1 is true, and pw_invalid1 is true.
+If pw_invalid1 is true, and cb_ctrlsource_pw is false, then in_auto_control is true.
+If pw_invalid1 is true, and cb_ctrlsource_valid and cb_ctrlsource_pw are true, cb_alarm_pwinvalid1 is false, and next al_ok is ture.
+If pw_invalid1 and t_ge_120 are true, then cb_alarm_pwinvalid2 is true, and next pw_invalid2 is true.
+If pw_invalid2 and cb_cuffsource are true, then cb_ctrlsource_cuff is true, and next in_auto_control is true.
+If pw_invalid2 is true, and cb_cuffsource and cb_alsource are false, then cb_backmanual is true, and next wait is true.

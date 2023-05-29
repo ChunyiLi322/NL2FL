@@ -1,0 +1,16 @@
+if wait and ca_mode_ac are true, then next in_auto_control is true.
+If in_auto_control and cb_ctrlsource_al are true, next al_in_ac is true.
+If in_auto_control and cb_alsource is true, and cb_ctrlsource_al is not true, then next corroborate_al is true.
+If corroborate_al is true, next in_auto_control is true.
+If al_in_ac and t_ge_15 are true, then next al_ok is true.
+If al_ok and cb_ctrlvalue_valid are true, then next al_in_ac is true.
+If al_ok is true, and cb_ctrlvalue_valid is not true, next al_invalid1 is true.
+If al_invalid1 and t_ge_90 are true, then cb_alram_alinvalid11 is true, and next al_invalid1 is set to be true.
+If al_invalid11 and cb_ctrlvalue_valid are true, then cb_alarm_alvalid1 is false, and next al_ok is true.
+If al_invalid1 and cb_ctrlvalue_valid are true, then al_ok is true.
+If al_invalid11 and t_ge_120 are true, then cb_alarm_alvalid2 is true, and next al_invalid2 is true. 
+If al_invalid2 and cb_cuffsource are true, and cb_pwsource is false, then cb_ctrlsource_cuff is true, and next in_auto_control is true.
+If al_invalid2 and cb_pwsource are true, then next in_auto_control is true.
+If al_invalid2 is true, and cb_cuffsource and cb_pwsource are not true, then cb_backmanual is true, and next wait is true.
+If in_auto_control and cb_alsource are true, then cb_ctrlsource_al is not true, and next corroborate_al is true. 
+If corroborate_al is true, then next in_auto_control is true.

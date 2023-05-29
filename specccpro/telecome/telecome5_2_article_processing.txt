@@ -1,0 +1,20 @@
+##for 2.1
+when introduction_screen is available, eventually article_process is started. 
+After article_process is terminated, if anything is selected, ordering_procedure starts.
+After ordering_procedure is terminated, if something is ordered, order_processing_procedure starts.
+After ordering_procedure is terminated, if something is ordered, introduction_screen is available.
+After order_processing_procedure is terminated, introduction_screen is available.
+##2.1
+If article_process starts, article_information is displayed.
+When article_information is displayed, process_selection or process_back can be selected.
+If process_selection is selected, article_selection_procedure starts.
+When article_selection_procedure terminates, article_information is displayed.
+If process_back is selected, article_process terminates.
+##2.1.1
+If article_selection_procedure starts, article_selection_information is displayed. 
+When article_selection_information is displayed, article_selection or adjust_article_amount or search_function or article_selection_back can be selected.
+If article_selection is selected, article_selection_information is displayed. 
+If adjust_article_amount is selected, article_selection_information is displayed. 
+If search_function is selected, and article is found, article_selection_information is displayed. 
+If search_function is selected, and article is not found, article_selection_information is displayed. 
+If article_selection_back is selected, article_selection_procedure terminates.

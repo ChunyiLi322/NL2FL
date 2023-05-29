@@ -1,0 +1,6 @@
+When introduction_screen is displayed, eventually identification_procedure will starts.
+If identification_procedure starts, and user is registered, system_set_up starts.
+If identification_procedure starts, and user is not registered, introduction_screen is displayed.
+After system_set_up is terminated, if link is made successfully, online_reservation_procedure starts.
+After system_set_up is terminated, if link is not made successfully, system_error is displayed, and introduction_screen is displayed.
+If online_reservation_procedure terminates, introduction_screen is displayed.

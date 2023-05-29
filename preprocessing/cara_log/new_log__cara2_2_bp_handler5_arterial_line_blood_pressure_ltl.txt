@@ -1,0 +1,16 @@
+(wait && ca_mode_ac) -> X in_auto_control
+(in_auto_control && cb_ctrlsource_al) -> X al_in_ac
+(in_auto_control && cb_alsource && !cb_ctrlsource_al) -> X corroborate_al
+corroborate_al -> X in_auto_control
+(al_in_ac && t_ge_15) -> X al_ok
+(al_ok && cb_ctrlvalue_valid) -> X al_in_ac
+(al_ok && !cb_ctrlvalue_valid) -> X al_invalid1
+(al_invalid1 && t_ge_90) -> (cb_alram_alinvalid11 && X al_invalid1)
+(al_invalid11 && cb_ctrlvalue_valid) -> (!cb_alarm_alvalid1 && X al_ok)
+(al_invalid1 && cb_ctrlvalue_valid) -> X al_ok
+(al_invalid11 && t_ge_120) -> (cb_alarm_alvalid2 && X al_invalid2)
+(al_invalid2 && cb_cuffsource && !cb_pwsource) -> (cb_ctrlsource_cuff && X in_auto_control)
+(al_invalid2 && cb_pwsource) -> X in_auto_control
+(al_invalid2 && !cb_cuffsource && !cb_pwsource) -> (cb_backmanual && X wait)
+(in_auto_control && cb_alsource && !cb_ctrlsource_al) -> X corroborate_al
+corroborate_al -> X in_auto_control

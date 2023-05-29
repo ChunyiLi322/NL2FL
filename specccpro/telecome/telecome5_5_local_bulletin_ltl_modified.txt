@@ -1,0 +1,20 @@
+[]((((display_introduction_screen))) -> (((delete_bulletins))))
+[]((((delete_bulletin))) -> ([]((((modify_user))) -> (((start_identification_procedure))))))
+[](((delete_bulletin)) -> []([]((((do_user))) -> (((start_display_bulletin_board_procedure))))))
+[]((((!register_starts&&!register_user))) -> (((start_display_bulletin_board_procedure))))
+[]((((((register_starts&&register_user))) && (((require_new_registration))))) -> (((start_new_bulletin_procedure))))
+[]((((((((start_dentification_procedure))) && (((register_user))))) && (((!require_new_registration))))) -> (((start_removing_bulletin_procedure))))
+[]((((start_new_bulletin_procedure))) -> (((user_select_bulletin_category))))
+[](((terminate_user_select_bulletin_category)) -> [](((enable_bulletin_input))))
+[]((((start_display_bulletin_board_procedure))) -> ([]((((((select_bulletin))) && (((request_printing))))) -> (((execute_local_printing))))))
+[]((((start_display_bulletin_board_procedure))) -> ([]((((!select_bulletin))) -> (<>((!start_display_bulletin_board_procedure))))))
+[]((((start_display_bulletin_board_procedure))) -> ([]((((((((select_bulletin))) && (((!request_printing))))) && (((request_phone_call))))) -> (((execute_audio_phone_line))))))
+[]((((start_display_bulletin_board_procedure))) -> ([]((((((((select_bulletin))) && (((!request_printing))))) && (((!request_phone_call))))) -> (<>((!start_display_bulletin_board_procedure))))))
+[](((terminate_enable_bulletin_input)) -> X(((add_system_information))))
+(((add_system_information)) -> [](((!start_new_bulletin_procedure))))
+((((((start_removing_bulletin_procedure))) && (((!confirm_bulletin_removing))))) -> X(((!start_removing_bulletin_procedure))))
+((((((start_removing_bulletin_procedure))) && (((confirm_bulletin_removing))))) -> X(((delete_bulletin))))
+(((delete_bulletin)) -> <>(((!start_removing_bulletin_procedure))))
+
+INPUT display_introduction_screen,register_starts,register_user,require_new_registration,start_dentification_procedure,terminate_user_select_bulletin_category,terminate_enable_bulletin_input
+OUTPUT delete_bulletins,start_identification_procedure,modify_user,start_display_bulletin_board_procedure,do_user,start_new_bulletin_procedure,start_removing_bulletin_procedure,user_select_bulletin_category,enable_bulletin_input,add_system_information,delete_bulletin,execute_local_printing,request_printing,select_bulletin,execute_audio_phone_line,request_phone_call,confirm_bulletin_removing

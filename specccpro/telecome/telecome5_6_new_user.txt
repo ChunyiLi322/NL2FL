@@ -1,0 +1,6 @@
+When introduction_screen is displayed, registration_terms are displayed.
+When registration_terms are displayed, if registration_form is requested, next local_printing is executed. 
+When registration_terms are displayed, if registration_form is not requested, next introduction_screen is displayed.
+After local_printing is executed, registration_form is filled. 
+After registration_form is filled, introduction_screen is displayed.
+Assume that local_printing and introduction_screen are not available at the same time.

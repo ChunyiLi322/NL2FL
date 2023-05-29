@@ -1,0 +1,19 @@
+if beginning and cb_alsource are true, then next al_available is true.
+If beginning is true, and cb_alsource and cb_pwsource are false, next ending_corroboration is true.
+If al_available and cb_alvalue_gt_cb_cuffvalue are true, or al_available and cb_alvalue_t_cb_cuffvalue are true, next out_of_range is true.
+If al_available and cb_alvalue_domain are true, then next ending_corrboration is true.
+If out_of_range and t_ge_1 are true, then next get_cuff1 is true.
+If get_cuff1 and t_ge_2 are true, then next get_cuff2 is true.
+If get_cuff2 and cb_alvalue_domain are true, next ending_corroboration is true.
+If override_window and cc_button_overrideyes are true, then next cc_button_overrideyes and cc_window_override are false and next ending_corroboration is true.
+If override_window and cc_button_overrideno are true, then next cc_button_overrideno and cc_window_override are false, and next beginning is true.
+if beginning and cb_pwsource are true,  and cb_alsource  is false, then next pw_available is true.
+If pw_available and cb_pwvalue_domain are true, then next ending_corrboration is true.
+If out_of_range_pw and t_ge_1 are true, then next get_cuff1_pw is true.
+If get_cuff1_pw and t_ge_2 are true, then next get_cuff2_pw is true.
+If override_window_pw and cc_button_overrideyes are true, then next cc_button_overrideyes and cc_window_override are false and next ending_corroboration is true.
+If override_window_pw and cc_button_overrideno are true, then next cc_button_overrideno and cc_window_override are false and next ending_corroboration is true.
+If get_cuff2_pw and cb_pwvalue_domain are true, next ending_corroboration is true.
+if get_cuff2 and cb_alvalue_gt_cuffvalue are true, or get_cuff2 and cb_alvalue_lt_cuffvalue are true, cc_window_override is true, and next override_window is true.
+if pw_available and cb_alvalue_gt_cb_cuffvalue are true, or pw_available and cb_alvalue_lt_cb_cuffvalue are true, next out_of_range_pw is true.
+if get_cuff2_pw and cb_alvalue_gt_cuffvalue are true, or get_cuff2_pw and cb_alvalue_lt_cuffvalue are true, cc_window_override is true, and next override_window_pw is true.

@@ -1,0 +1,14 @@
+if wait  and ca_mode_manual are true, next begining_pw_detecting is true.
+if begining_pw_detecting and ppr_pwvalue_gt_0 are true, then cb_pwsource is true and next pwvalue_available is true.
+If pwvalue_available and ppu_stop are true, next wait is true.
+if pwvalue_available and timin are true, next average_in_one_min is true.
+If average_in_one_min and ppr_pwvalue_ge_40 and ppr_pwvalue_le_150 are true, then cb_pwsource is true and next new_value is true.
+If new_value is true, then next pwvalue_available is true.
+If average_in_one_min is true, then next no_new_value is true.
+If no_new_value and i_eq_0 are true, next no_update_in_one_min is true.
+if no_new_value and i_gt_0 are true, next update_in_this_min is true.
+If no_update_in_one_min is true, next pwvalue_available is true.
+If update_in_this_min is true, next pwvalue_available is true.
+If pwvalue_available and ppr_pwvalue_ge_40 and ppr_pwvalue_le_150 are true and timin is not true, then next cb_pwsource is true and next updated_within_one_second is true.
+If pwvalue_available and t_gt_180 are true, then cb_alarm_pwlost is true and cb_pwsource is not true, and next unAvailable_for_3_minutes is true. 
+If unAvailable_for_3_minutes is true, then cb_pwsource is true and pwvalue_available is true.

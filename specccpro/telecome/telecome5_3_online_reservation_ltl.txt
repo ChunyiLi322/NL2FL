@@ -1,0 +1,9 @@
+[]((((display_introduction_screen))) -> (<>((start_identification_procedure))))
+[]((((((start_identification_procedure))) && (((register_user))))) -> (((start_system_set_up))))
+[]((((((start_identification_procedure))) && (((!register_user))))) -> (((display_introduction_screen))))
+[](((!start_system_set_up)) -> []([]((((make_link))) -> (((start_online_reservation_procedure))))))
+[](((!start_system_set_up)) -> []([]((((!make_link))) -> (((((display_system_error))) && (((display_introduction_screen))))))))
+[]((((!start_online_reservation_procedure))) -> (((display_introduction_screen))))
+
+INPUT register_user,start_system_set_up,start_online_reservation_procedure
+OUTPUT start_identification_procedure,display_introduction_screen,make_link,display_system_error

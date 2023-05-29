@@ -1,0 +1,9 @@
+[]((((display_introduction_screen))) -> (((display_registration_terms))))
+[]((((display_registration_terms))) -> ([]((((request_registration_form))) -> (X((execute_local_printing))))))
+[]((((display_registration_terms))) -> ([]((((!request_registration_form))) -> (X((display_introduction_screen))))))
+[](((execute_local_printing)) -> [](((fill_registration_form))))
+[](((fill_registration_form)) -> [](((display_introduction_screen))))
+ASSUME ((!local_printing&&!introduction_screen))
+
+INPUT display_registration_terms
+OUTPUT execute_local_printing,request_registration_form,display_introduction_screen,fill_registration_form,local_printing,introduction_screen

@@ -1,0 +1,5 @@
+[]((((notplugin&&ppu_plugin))) -> (X((start_timer))))
+[]((((start_timer&&t1_ge_5&&t2_lt_60))) -> (((((!t5sec))) && (X((every_5_sec))))))
+[]((((every_5_sec&&t_ge_dot_5))) -> (((((t5sec))) && (X((start_timer))))))
+[]((((((start_timer))) && (((!t2_lt_60))))) -> (((((!t5sec&&t_0&&!t1min&&t2_0&&t1_0))) && (X((every_1_min))))))
+[]((((every_1_min&&t_ge_5))) -> (((((t5sec&&t1min))) && (X((start_timer))))))

@@ -1,0 +1,6 @@
+LTL Formula: F(introduction_screen)
+(registration_terms -> (registration_form U local_printing)) && (registration_terms -> (F(introduction_screen) | X(registration_terms)))
+LTL Formula: F(local_printing)
+LTL Formula: (F(registration_form) && X(introduction_screen))
+LTL Formula: (F(registration_form) && X(registration_terms))
+(introduction_screen && local_printing) -> false

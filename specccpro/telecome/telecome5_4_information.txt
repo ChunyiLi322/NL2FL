@@ -1,0 +1,15 @@
+When introduction_screen is displayed, eventually overview_of_subject is available.
+If overview_of_subject  is available, subject or search_function or information_back can be selected.
+If search_function is selected, and subject is found, subject_information_display starts.
+If subject_information_display terminates, overview_of_subject is available.
+If subject is not found, overview_of_subject is available.
+If information_back is selected, introduction_screen is displayed.
+If subject_information_displaying starts, text_data_information is displayed. 
+If scroll_text is selected, text_data_information is displayed. 
+If  telephonic_info or ordering is selected,  text_data_information is displayed. 
+If apply_register is selected, and form is filled, and printout is wanted,  text_data_information is displayed. 
+If apply_register is selected, and form is filled, and printout is not wanted,  text_data_information is displayed. 
+If apply_register is selected, and form is not filled,  text_data_information is displayed. 
+If selected_subject_back is selected, subject_information_display terminates.
+If print_current_page or print_all is selected, text_data_information is displayed. 
+Scrolling_text or printing_current_page or printing_all or telephonic_info or ordering or applying_register or selected_subject_back can be selected if text_data_information is displayed.

@@ -1,0 +1,13 @@
+## constraint
+Initially r2 or r3 or r4  is not available and r1 is available.
+If  r1 is true, the robot can move to r1, r2 or r3.
+If  r2 is true, the robot  can move to r2, r1 or r4.
+If  r3 is true, the robot  can move to r3, r1 or r4.
+If  r4 is true, the robot  can move to r4, r2 or r3.
+Person is not available until r1 or r3 becomes true.
+Medic is not available until r2 or r4 becomes true.
+If person is available, next carryPerson will be available.
+if carryPerson is available, it will be available until medic is available.
+##the robot moves to r1, or carryPerson is true.
+##the robot moves to r3, or carryPerson is true.
+##if carryPerson is available, then moves to r2 or r4.

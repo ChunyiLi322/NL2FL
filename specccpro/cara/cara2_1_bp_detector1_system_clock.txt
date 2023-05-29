@@ -1,0 +1,5 @@
+If notplugin and ppu_plugin are true, then t5sec and t1min are not true, next start_timer is true.
+If start_timer  and t1_ge_5 and t2_lt_60 are true, then t5sec is true and next every_5_sec is true.
+If every_5_sec and t_ge_dot_5 are true, then t5sec is not true and next start_timer is true.
+If start_timer  is true and t2_lt_60 is not true, then t5sec and t1min and t_0 and t1_0 and t2_0 are true and next every_1_min is true.
+If every_1_min and t_ge_5 are true, then t5sec and t1min are false and next start_timer is true.

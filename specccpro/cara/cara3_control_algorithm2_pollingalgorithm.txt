@@ -1,0 +1,56 @@
+If void and ca_mode_wait are true,then t1_at_0 and t2_at_0  are true and next polling_backemf is true.
+If polling_backemf is true and ppu_backemf_gt_0 is not true,then t_at_0 are true and next the_2nd_polling_backemf is true.
+If polling_backemf is true and ppu_backemf_gt_0 is not true,then t_at_0 and d_t_at_0 are true and next the_2nd_polling_backemf is true.
+If polling_backemf and ppu_backemf_gt_0 are true, next polling_impedance is true.
+If polling_backemf and ppu_backemf_gt_0 are true,then next polling_impedance is true.
+If polling_backemf is true and ppu_backemf_gt_0 is not true,then t_at_0 and d_t_at_0 are true and next the_2nd_polling_backemf is true.
+If polling_backemf and ppu_backemf_gt_0 are true, next polling_impedance is true.
+If the_2nd_polling_backemf is true and ppu_backemf_gt_0 is not true and t_et_1 is true ,next the_3rd_polling_backemf is true.
+If the_2nd_polling_backemf and t_et_1 are true and ppu_backemf_gt_0 is not true,then next the_3rd_polling_backemf is true.
+If the_2nd_polling_backemf and ppu_backemf_gt_0 are true,then  next polling_impedance is true.
+If the_2nd_polling_backemf and t_et_1 are true and ppu_backemf_gt_0 is not true,next the_3rd_polling_backemf is true.
+If the_2nd_polling_backemf and ppu_backemf_gt_0 are true,  next polling_impedance is true.
+If the_3rd_polling_backemf and ppu_backemf_gt_0 are true, next polling_impedance is true.
+If the_3rd_polling_backemf and t_et_2 are true and ppu_backemf_gt_0 is not true,then ca_alaram_pollemf and ca_backma are true and next wait is true.
+If the_3rd_polling_backemf is true and ppu_backemf_gt_0 is not true and t_et_2 is true,then ca_alaram_pollemf is true and next polling_impedance is true.
+If the_3rd_polling_backemf and t_et_2 are true and ppu_backemf_gt_0 is not true,then ca_alaram_pollemf is true and next polling_impedance is true.
+If the_3rd_polling_backemf and ppu_backemf_gt_0 are true,then  next polling_impedance is true.
+If the_2nd_polling_impedance and t_et_1 are true and ppu_impedance_gt_0 is not true,then next the_3rd_polling_impedance is true.
+If the_2nd_polling_impedance and ppu_impedance_gt_0 are true,then next wait is true.
+If the_2nd_polling_impedance and t_et_1 are true and ppu_impedance_gt_0 is not true,then next the_3rd_polling_impedance is true.
+If the_2nd_polling_impedance and ppu_impedance_gt_0 are true,next wait is true.
+If the_2nd_polling_impedance and t_et_1 are true and ppu_impedance_gt_0 is not true,next the_3rd_polling_impedance is true.
+If the_2nd_polling_impedance and ppu_impedance_gt_0 are true, next wait is true.
+If the_3rd_polling_impedance and t_et_2 are true and ppu_impedance_gt_0 is not true,then ca_alaram_polling is true and next wait is true.
+If the_3rd_polling_impedance and ppu_impedance_gt_0 are true,next wait is true.
+If the_3rd_polling_impedance and t_et_2 are true and ppu_impedance_gt_0 is not true,then ca_alaram_polling is true and next wait is true.
+If the_3rd_polling_impedance and t_et_2 are true and ppu_impedance_gt_0 is not true,then ca_alaram_pollimp is true and next wait is true.
+If the_3rd_polling_impedance and ppu_impedance_gt_0 are true,then next wait is true.
+If the_3rd_polling_impedance and t_et_2 are true and ppu_impedance_gt_0 is not true,then ca_alaram_pollimp and ca_backma are true and next wait is true.
+If the_3rd_polling_impedance and ppu_impedance_gt_0 are true,next wait is true.
+If the_3rd_polling_impedance and t_et_2 are true and ppu_impedance_gt_0 is not true, then ca_alarm_pollmp and ca_backma are true and next wait is true.
+If polling_impedance and ppu_impedance_gt_0 are true,then next wait is true.
+If polling_impedance is true and ppu_impedance_gt_0 is not true,then t_at_0 and d_t_at_0 are true and next the_2nd_polling_impedance is true.
+If polling_impedance is true and ppu_impedance_gt_0 is not true,then t_at_0 and d_t_at_0 are true and next the_2nd_polling_impedance is true.
+If polling_impedance and ppu_impedance_gt_0 are true,next wait is true.
+If polling_impedance is true and ppu_impedance_gt_0 is not true,then t_at_0 is true and next the_2nd_polling_impedance is true.
+If polling_impedance and ppu_impedance_gt_0 are true,next wait is true.
+If wait is true and ppu_airok is not true,next polling_impedance is true.
+If wait and ppu_plugin and ppu_airok and ca_mode_wait are true and t1_lt_5 is not true and t2_lt_60 is true,then t1_at_0 is true and next polling_backemf is true.
+If wait and ppu_plugin and ppu_airok and ca_mode_wait are true and t2_lt_60 is not true,then avgfr_at_tmp_divi_i and t1_at_0 and t2_at_0 and i_at_0  are true and next polling_backemf is true.
+If wait is true and pluggedin is not true,then next void is true.
+If wait and ca_mode_ma are true,then next being_manual_mode is true.
+If wait is true and ppu_airok is not true,then next polling_impedance is true.
+If wait and ppu_plugin and ppu_airok and ca_mode_ma and t2_lt_60 are true and t1_lt_5 is not true,then t1_at_0 is true and next polling_backemf is true.
+If wait and ppu_plugin and ppu_airok and ca_mode_ma are true and t2_lt_60 is not true,then t1_at_0 and t2_at_0  are true and next polling_backemf is true.
+If wait is true and pluggedin is not true,next being_manual_mode is true.
+If wait is true and ca_mode_autocon is true,next being_manual_mode is true.
+If wait is true and ppu_airok is not true,next polling_impedance is true.
+If wait and ppu_plugin and ppu_airok and ca_mode_autocon and t2_lt_60 are true and t1_lt_5 is not true,then t1_at_0 is true and next polling_backemf is true.
+If wait and ppu_plugin and ppu_airok and ca_mode_autocon are true and t2_lt_60 is not true,then  t1_at_0 and t2_at_0  are true and next polling_backemf is true.
+If being_manual_mode and ca_mode_wait are true,then wait is true.
+If being_manual_mode and PPu_plugin and ppu_airok and t2_lt_60 are true and t1_lt_5 is not true,then t1_at_0 is true and next polling_backemf is true.
+If being_manual_mode and ppu_plugin and PPu_airok are true and t2_lt_60 is not true,then avgfr_at_tmp_divi_i and t1_at_0 and t2_at_0 and i_at_0  are true and next polling_backemf is true.
+If being_manual_mode and ca_mode_ma are true,next wait is true.
+If being_manual_mode and PPu_plugin and ppu_airok and t2_lt_60 are true and t1_lt_5 is not true,then t1_at_0 is true and next polling_backemf is true.
+If being_manual_mode and ppu_plugin and PPu_airok are true and t2_lt_60 is not true,then avgfr_at_tmp_divi_i and t1_at_0 and t2_at_0 and i_at_0  are true and next polling_backemf is true.

@@ -1,0 +1,20 @@
+[]((((introduction_screen))) -> (<>((start_article_process))))
+[](((!start_article_process)) -> []([]((((select_anything))) -> (((start_ordering_procedure))))))
+[](((!start_ordering_procedure)) -> []([]((((order_something))) -> (((start_order_processing_procedure))))))
+[](((!start_ordering_procedure)) -> []([]((((order_something))) -> (((introduction_screen))))))
+[](((!start_order_processing_procedure)) -> [](((introduction_screen))))
+[]((((start_article_process))) -> (((display_article_information))))
+[]((((display_article_information))) -> (((select_process_selection||select_process_back))))
+[]((((select_process_selection))) -> (((start_article_selection_procedure))))
+[]((((!start_article_selection_procedure))) -> (((display_article_information))))
+[]((((select_process_back))) -> (((!start_article_process))))
+[]((((start_article_selection_procedure))) -> (((display_article_selection_information))))
+[]((((display_article_selection_information))) -> (((select_article_selection||select_adjust_article_amount||select_search_function||select_article_selection_back))))
+[]((((select_article_selection))) -> (((display_article_selection_information))))
+[]((((select_adjust_article_amount))) -> (((display_article_selection_information))))
+[]((((((select_search_function))) && (((find_article))))) -> (((display_article_selection_information))))
+[]((((((select_search_function))) && (((!find_article))))) -> (((display_article_selection_information))))
+[]((((select_article_selection_back))) -> (((!start_article_selection_procedure))))
+
+INPUT start_ordering_procedure,start_order_processing_procedure,find_article
+OUTPUT start_article_process,select_anything,order_something,introduction_screen,display_article_information,select_process_selection,select_process_back,start_article_selection_procedure,display_article_selection_information,select_article_selection,select_adjust_article_amount,select_search_function,select_article_selection_back

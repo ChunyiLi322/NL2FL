@@ -1,0 +1,5 @@
+(!plugin && ppu_plugin) -> (!t5sec && !t1min && start_timer)
+(start_timer && t1_ge_5 && t2_lt_60) -> (t5sec && every_5_sec)
+(every_5_sec && t_ge_dot_5) -> (!t5sec && start_timer)
+(start_timer && !t2_lt_60) -> (t5sec && t1min && t_0 && t1_0 && t2_0 && every_1_min)
+(every_1_min && t_ge_5) -> (!t5sec && !t1min && start_timer)

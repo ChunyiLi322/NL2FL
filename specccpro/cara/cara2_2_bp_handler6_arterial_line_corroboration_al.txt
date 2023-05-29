@@ -1,0 +1,12 @@
+if start and cb_alsource are true, next al_available is true.
+If al_available is true, and cb_alvalue_valid is false, next out_of_range is true.
+If out_of_range is true, and cb_alvalue_valid is false, then cc_window_override is true, and next override_window is true.
+if override_window and cc_button_overrideno are true, then next cc_button_overrideno and cc_window_override are false, and next ctrlsource is true.
+If ctrlsource and cb_ctrlsource_cuff and cb_pwsource are true, then next pw_available is true.
+If al_available and cb_alvalue_valid are true, then cb_ctrlsource_al is true, and next ending_corroboration is true.
+if pw_available is true, and cb_pwvalue_valid is not true, next out_of_range_pw is true.
+If  override_window_pw and cc_button_overrideno are true, then cc_button_overrideno and cc_window_override are false, and next ending_corroboration is true.
+If  override_window_pw and cc_button_overrideyes are true, then  cc_button_overrideues and cc_window_override are false, and cb_ctrlsource_pw is true, and next ending_corroboration is true.
+If al_available and cb_alvalue are true, then cb_ctrlsource_al is true, and next ending_corroboration is true.
+If ctrlsource  and cb_ctrlsource_pw are true, or ctrlsource is true and cb_pwsource is not true, next ending_corroboration is true.
+If out_of_range_pw is true, and cb_pwvalue_valid is not true,  cc_window_override is true, and next override_window_pw is true.

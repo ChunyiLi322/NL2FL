@@ -1,0 +1,17 @@
+When introduction_screen is displayed, bulletins are deleted.
+When bulletin is deleted, if user modifies the bulletin, identification_procedure is started.
+After bulletin is deleted, if user does wants to modify the bulletin, display_bulletin_board_procedure starts.
+If identification_procedure starts and user is not registered, display_bulletin_board_procedure starts.
+If identification_procedure starts and user is registered, and new_registration is required, new_bulletin_procedure starts.
+If identification_procedure starts, and user is registered, and new_registration is not required, removing_bulletin_procedure starts.
+If new_bulletin_procedure starts, user_select_bulletin_category is available. 
+Enable_bulletin_input is available, after user_select_bulletin_category is terminated. 
+After enable_bulletin_input is terminated, system_information will be added automatically.
+After system_information is added, new_bulletin_procedure terminates.
+If removing_bulletin_procedure starts, and bulletin_removing is confirmed, bulletin is deleted.
+After bulletin is deleted, removing_bulletin_procedure is terminated.
+If removing_bulletin_procedure starts, and bulletin_removing is not confirmed, removing_bulletin_procedure terminates.
+When display_bulletin_board_procedure starts, if bulletin is selected and printing is requested, local_printing is executed. 
+When display_bulletin_board_procedure starts, if bulletin is  not selected, display_bulletin_board_procedure will terminate.
+When display_bulletin_board_procedure starts, if bulletin is selected, and printing is not requested, and phone_call is requested, audio_phone_line is executed.
+When display_bulletin_board_procedure starts, if bulletin is selected, and printing is not requested, and phone_call is not requested, display_bulletin_board_procedure will terminates.

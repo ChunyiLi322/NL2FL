@@ -1,0 +1,13 @@
+if wait and ca_mode_ac are true, then next in_auto_control is true.
+If in_auto_control and cb_ctrlsource_cuff are true, then next handle_cuff is true.
+If handle_cuff and i_ge_5 and cb_ctrlsource_cuff are true, then next cuff_in_ac is true.
+If handle_cuff and cb_ctrlsource_cuff are true, and i_ge_5 is not true, then next initial_5_readings is true.
+If initial_5_readings is true, then next handle_cuff is true.
+If cuff_in_ac and cb_ctrlvalue_le_150 are true, the next cuff_frequency is true.
+If cuff_in_ac is true, and cb_ctrlvalue is not true, then cb_alarm_cuffinvalid1 is true, and next cuff_invalid1 is true.
+If cuff_invalid1 and t_ge_40 are true, then cb_alarm_cuffinvalid2  and cb_backmanual are true, and next cuff_invalid2 is true. 
+If cuff_invalid1 and cb_cuffvalue_le_150 are true,  cb_alarm_cuffinvalid1 is true, and next cuff_in_ac is true.
+If cuff_frequency and t_ge_cufffrequency are true, then next cuff_in_ac is true.
+If cuff_frequency is true, and cb_ctrlsource_cuff is false, then next in_auto_control is true.
+
+

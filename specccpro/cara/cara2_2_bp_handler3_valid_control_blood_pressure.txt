@@ -1,0 +1,15 @@
+if wait and cb_initialac are true, next validating_control_BP is true.
+If validating_control_BP and cb_ctrl_value_domain are true, then cb_validbp is true, and next get_valid_one is true.
+If get_valid_one and ca_mode_manual are true, next wait is true.
+If validating_control_BP is true, and cb_ctrlvalue_domain is not true, then cb_validbp is false, and next invalid_one is true.
+If invalid_one and cb_ctrlsource_cuff are true, next cuff is true.
+If invalid_one and cb_ctrlsource_al are true, next arterial_line is true.
+If invalid_one and cb_ctrlsource_pw are true, next pulse_wave is true.
+If pulse_wave and cb_pwvalue_domain are true, then cb_validbp is true, and next end_validation is true.
+If pulse_wave and t_ge_180 are true, then cb_validbp is false, and cb_backmanual is true, and next end_validation is true.
+If cuff and t_ge_180 are true, then cb_validbp is false, and cb_backmanual is true, and next end_validation is true.
+If cuff and cb_cuffvalue_domain are true, then cb_validbp is true, and next end_validation is true.
+If arterial_line and cb_alvalue_domain are true, then cb_validbp is true, and next end_validation is true.
+If arterial_line and t_ge_180 are true, then cb_validbp is false, and cb_backmanual is true, and next end_validation is true.
+
+

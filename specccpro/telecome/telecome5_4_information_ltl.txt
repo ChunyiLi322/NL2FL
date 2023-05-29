@@ -1,0 +1,18 @@
+[]((((display_introduction_screen))) -> (<>((overview_of_subject))))
+[]((((overview_of_subject))) -> (((select_subject||select_search_function||select_information_back))))
+[]((((((select_search_function))) && (((find_subject))))) -> (((start_subject_information_display))))
+((overview_of_subject))
+[]((((!find_subject))) -> (((overview_of_subject))))
+[]((((select_information_back))) -> (((display_introduction_screen))))
+[]((((start_subject_information_displaying))) -> (((display_text_data_information))))
+[]((((select_scroll_text))) -> (((display_text_data_information))))
+[]((((select_telephonic_info||select_ordering))) -> (((display_text_data_information))))
+[]((((((((select_apply_register))) && (((fill_form))))) && (((want_printout))))) -> (((display_text_data_information))))
+[]((((((((select_apply_register))) && (((fill_form))))) && (((!want_printout))))) -> (((display_text_data_information))))
+[]((((((select_apply_register))) && (((!fill_form))))) -> (((display_text_data_information))))
+[]((((select_selected_subject_back))) -> (((!start_subject_information_display))))
+[]((((select_print_current_page||select_print_all))) -> (((display_text_data_information))))
+[]((((display_text_data_information))) -> (((select_scrolling_text||select_printing_current_page||select_printing_all||select_telephonic_info||select_applying_register||select_selected_subject_back||select_ordering))))
+
+INPUT find_subject,start_subject_information_displaying,select_scroll_text,want_printout,fill_form,select_apply_register,select_print_current_page,select_print_all
+OUTPUT overview_of_subject,select_subject,select_search_function,select_information_back,start_subject_information_display,display_introduction_screen,display_text_data_information,select_scrolling_text,select_printing_current_page,select_printing_all,select_telephonic_info,select_applying_register,select_selected_subject_back,select_ordering
