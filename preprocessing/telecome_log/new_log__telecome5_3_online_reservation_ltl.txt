@@ -1,6 +1,0 @@
-[](introduction_screen -> <>identification_procedure)
-[](identification_procedure -> (user_registered -> <>system_set_up) && (!user_registered -> []introduction_screen))
-[](system_set_up -> (link_made -> <>online_reservation_procedure) && (!link_made -> (system_error && []introduction_screen)))
-[](online_reservation_procedure -> []introduction_screen)
-[](system_set_up && (! link_made_successfully)) -> (system_error && [](introduction_screen))
-[](<> introduction_screen)
