@@ -1,0 +1,544 @@
+conda create -n NL2LTL python==3.8
+conda activate NL2LTL
+cd D:\django-blog-master\mysite
+
+pip install -r requirements.txt
+windows-> preferences -> pyDev -> interpreters -> python -> interpreters -> new ->browse from python/pypyexe -> load conda env ->library + django + sqlite3 √
+project -> pyDev -> Source format python files    ==  solve ModuleNotFoundError: No module named 'mysite'
+python manage.py migrate == sqlite3 table
+
+
+python manage.py migrate
+System check identified some issues:
+
+	WARNINGS:
+	blog.Comment: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BlogConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+	blog.Post: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+	        HINT: Configure the DEFAULT_AUTO_FIELD setting or the BlogConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+	Operations to perform:
+	  Apply all migrations: admin, auth, blog, contenttypes, sessions
+	Running migrations:
+	  Applying contenttypes.0001_initial... OK
+	  Applying auth.0001_initial... OK
+	  Applying admin.0001_initial... OK
+	  Applying admin.0002_logentry_remove_auto_add... OK
+	  Applying admin.0003_logentry_add_action_flag_choices... OK
+	  Applying contenttypes.0002_remove_content_type_name... OK
+	  Applying auth.0002_alter_permission_name_max_length... OK
+	  Applying auth.0003_alter_user_email_max_length... OK
+	  Applying auth.0004_alter_user_username_opts... OK
+	  Applying auth.0005_alter_user_last_login_null... OK
+	  Applying auth.0006_require_contenttypes_0002... OK
+	  Applying auth.0007_alter_validators_add_error_messages... OK
+	  Applying auth.0008_alter_user_username_max_length... OK
+	  Applying auth.0009_alter_user_last_name_max_length... OK
+	  Applying auth.0010_alter_group_name_max_length... OK
+	  Applying auth.0011_update_proxy_permissions... OK
+	  Applying auth.0012_alter_user_first_name_max_length... OK
+	  Applying blog.0001_initial... OK
+	  Applying sessions.0001_initial... OK
+
+
+pip install pytz==2022.6  
+
+使用pytz论
+# return zoneinfo.ZoneInfo(settings.TIME_ZONE)
+import pytz
+return pytz.timezone(settings.TIME_ZONE)
+
+
+==  attributeerror: module 'zoneinfo' has no attribute 'zoneinfo'
+
+启用密码验证¶
+密码验证在 AUTH_PASSWORD_VALIDATORS设置中配置：
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 9,
+        }
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+此示例启用所有四个包含的验证器：
+
+UserAttributeSimilarityValidator，它检查密码和用户的一组属性之间的相似性。
+MinimumLengthValidator，它只是检查密码是否满足最小长度。这个验证器配置了一个自定义选项：它现在要求最小长度为九个字符，而不是默认的八个。
+CommonPasswordValidator，它检查密码是否出现在常用密码列表中。默认情况下，它与包含 1000 个常用密码的列表进行比较。
+NumericPasswordValidator，它检查密码是否不完全是数字。
+对于UserAttributeSimilarityValidator和CommonPasswordValidator，我们在此示例中仅使用默认设置。 NumericPasswordValidator没有设置。
+
+帮助文本和密码验证器的任何错误总是按照它们在 中列出的顺序返回AUTH_PASSWORD_VALIDATORS。
+
+http://www.phpxs.com/post/10443/
+
+url匹配规则示例
+
+pip install django-bootstrap3
+
+html文件设置 openwith others
+
+css 勾选使用正则化格式替换
+ (#[a-zA-Z]+) ->  $1 \r\n
+\}  ->  \}\r\n
+https://tool.lu/css/
+
+改变文件打开方式  windows -> general -> Editors -> File association
+
+
+INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    "bootstrap3",
+    'fontawesomefree',
+]
+
+加入     "bootstrap3",
+    'fontawesomefree', 网站开发和字体组件 用来加入右上角的图标签
+pycharm 专业版本
+setting interapter 设置 conda env 环境
+setting tool terminal 设置 cmd.exe
+将sqlit3的jdbc.jar 配置进sqlit软件中，创建新的db，加载项目里的db文件
+python manage.py runserver
+在pycharm右上角第二行第二个下拉框标记选择 EditConfig -> add django sever -> env: name :mysite PYTHONUNBUFFERED=1;DJANGO_SETTINGS_MODULE=mysite.settings
+_> python nl2ltl.env.python -> work space -> mysite 地址
+
+
+一个网站从设计到后台过程
+建立html css,js  在html中加入 引用的css和js
+在html添加动作和界面设计 如input为提交内容框 </textarea> 长文本框
+
+pip install -U django-cloudflare
+
+cloudflare加密 ，将域名输入，其会把email人阅览网站是email的明码，但是其实email是Js生成的，生成到html中的href是密文形式，
+
+运作流程像，使用view打开了template,而打开view是 url中path第一项指定。 需要import view的包,然后.as_view()函数，就会进入view的界面。
+
+实际例子 建立了email的view，里面设置了一个函数，在url将此方法配置进去，需要from blog.views import email的包,然后可在hello页面下看到hello方法的值。
+
+在前端获取数据再返还给前端，首先在html上定义{{ A }}, html 要在 template 注册， template 要在 setting 注册路径 ， urls 配置 https 绑定的 view
+，在view定义匹配的 B, 使用rend 可以将B 传给 A 的value
+
+在A 中可以定义过滤器，在显示之前执行内置函数操作， 比如输出 B ，加上过滤器 B|length 就会最后输出B的长度而不是B
+
+可以定义在 view 定义 A 的 匹配项 B为html 的控件格式   A = "<a href='https://www.runoob.com/'>点击跳转</a>"
+
+在html 中定义 {%  %}的变量可直接被view A 识别 ，返回 B， 则 B 会带入html 活动
+
+{% include "base.html" %} 允许包含其他页面内容
+
+使用model创建一个表流程
+在models文件夹下创建py，里面声明class class为表的名字，在admin里注册表,运行python manage.py makemigrations
+将新表信息写入0001_initial 里面，再运行 python manage.py migrate
+
+
+css 的继承关系  如 给a 设置了class 标签，  如 html的 <h2><a class="hover1"> 主题选取 </a></h2>， 那么css
+中关于a 的 定义， 优先将特定小范围的定义放在前面 .container  a.hover1:hover  后面再放 a:hover。 ID只能映射一个
+class 可以映射多个 css中 id使用#, class 使用. 如果不在div定义class，可以用 (标签)a.class调用
+
+下拉框 使用 bootstrap的下拉框，在main.js 加入 selectOnchang fuction 改变下拉框中值
+
+<script src="https://kit.fontawesome.com/72c42e442a.js" crossorigin="anonymous"></script> 引用的是在线js
+负责右上角的小图标
+
+py manage.py sqlmigrate blog/表名 0001
+
+如何将数据库里面数据传入view中，view在urls中定义后，代表打开定义的页面就会执行那个函数、类，在这个函数和类中将Model导入
+初始化 model = FormalMethod 然后调用 test_list = FormalMethod.objects.all() objects.all代表获取所有元素。    a = FormalMethod(name='UTL')
+a.save()
+test_list = FormalMethod.objects.all() 代表插入元素
+
+将添加数据的事件放进数据库里，先判断数据是否存在再添加 def insert_to_FormalMethod_database(name):
+    if not FormalMethod.objects.get(name=name):
+        a = FormalMethod(name=name)
+        a.save()
+
+一个屏幕分为12列，col-12   col-xs-10 表示占小屏幕的10列，与 col-xs-2 组合就是横向占满 md 中屏幕 lg 大屏幕
+
+<div class="control-inline" style="width:220px" !important>	直接在div设置控件高度
+
+直接在 input 加上 style 控制第一行为黄色
+ <li><input type="checkbox" style="background-color: #cc9b59"  name="checkbox" data-labelauty={{ i }}></li>
+
+安装 openai
+ pip install openai -i https://pypi.tuna.tsinghua.edu.cn/simple
+ pip install urllib3==1.25.11 -i https://pypi.tuna.tsinghua.edu.cn/simple
+tests 文档 运行 chatgpt看是否正常运行，在log_test可查看到运行结果
+
+
+form submit 提交后刷新整个页面
+在urls 定义一个 urls     path('postnl/', solveform.postnl),
+在views里，的solveform.py中定义出postnl方法，render 重定位要返回的数值和urls
+在html中 form 标签中加入 action                    <form
+                     id="main-nl2fl-form"
+                     name="nl2fl-form"
+                     method='post'
+                     action='/postnl/'
+
+ajax +  提交后刷新部分页面                  >
+
+<li><input type="checkbox" style="background-color: rgb(204, 155, 89); display: none;" name="flcheckbox" aria-hidden="true" class="labelauty" id="labelauty-794807">
+    <label for="labelauty-794807">
+        <span class="labelauty-unchecked-image"></span>
+        <span class="labelauty-unchecked">通信系统演算-CCS</span>
+        <span class="labelauty-checked-image"></span>
+        <span class="labelauty-checked">通信系统演算-CCS</span>
+    </label>
+</li>
+
+在LABELAUTY jQuery里面 将data-labelauty 删掉语句注释掉
+在ajax中
+ $(function(){
+    $('#nl2flsubmit').click(function(){
+      let flcheckboxlist = []
+　　　　$("input[name='flcheckbox']:checked").each(function(){
+         flcheckboxlist.push($(this).attr("data-labelauty"))
+　　　　});
+      let flpracheckboxlist = []
+　　　　$("input[name='flpracheckbox']:checked").each(function(){
+         // alert($(this).attr("data-labelauty"))
+         flpracheckboxlist.push($(this).attr("data-labelauty"))
+　　　　});
+     $.ajax({
+     'url':'/postnl/',  //访问的url地址
+     'dateType':'json',  //想要获得的返回数据类型
+     type:'post',
+     data:{
+       ChatGptAPIname:$('#ChatGptAPIname').val(),
+       nlmessage:$('#nlmessage').val(),
+       ChatGptversion:$('#ChatGptversion').val(),
+       flcheckbox:JSON.stringify(flcheckboxlist),
+       flpracheckbox:JSON.stringify(flpracheckboxlist),
+       csrfmiddlewaretoken:$('[name=csrfmiddlewaretoken]').val(),
+     }
+     }).success(function(res){  //执行成功的回调函数（含有返回的数据（date））
+       console.log(res)
+       var res_Str = JSON.parse(res);
+       console.log(res_Str,typeof res_Str);
+       $('#flmessage').val(res_Str['flmessage'])
+       $('#flpramessage').val(res_Str['flpramessage'])
+     })
+    })
+ })
+
+ 其中data里面是要传入的数据，success是要传回的数据
+ urls同上面刷新整个页面一样，先去urls配置，再去view写方法
+
+ 在view
+      ChatGptAPIname = req.POST.get("ChatGptAPIname")
+        nlmessage = req.POST.get("nlmessage")
+        flcheckbox = req.POST.get("flcheckbox")
+        flpracheckbox = req.POST.get("flpracheckbox")
+        ChatGptversion = req.POST.get("ChatGptversion")
+        flcheckbox = predata_checkbox(flcheckbox)
+        flpracheckbox = predata_checkbox(flpracheckbox)
+        flmessage, flpramessage = chatgptresponse(str(ChatGptversion), ChatGptAPIname, nlmessage, flcheckbox,
+                                                  flpracheckbox)
+        print(ChatGptAPIname, nlmessage, flcheckbox,'\n' , flpracheckbox, ChatGptversion)
+        # 定义字典
+        nl = {'ChatGptAPIname': ChatGptAPIname, 'nlmessage': nlmessage}
+        # 用于test
+        # ret = {'flmessage': 'flmessage', 'flpramessage': 'flpramessage'}
+        ret = {'flmessage': flmessage, 'flpramessage': flpramessage}
+    # 将列表传给模板index.html
+    return HttpResponse(json.dumps(ret))
+
+req.POST.get 获取ajax传过来的数据
+
+HttpResponse(json.dumps(ret)) 返回给ajax
+
+
+form submit 提交形式化公式的img
+在urls 定义一个 urls         path('postflimg/', solveform.postflimg),
+在views里，的solveform.py中定义出def postflimg(req):方法，render 重定位要返回的数值和urls
+在html中 form 标签中加入                 <form
+                              <div class="form-group">
+                              <img
+                                src="{% static 'blog/images/home/under_7.png' %}"
+                                class="img-responsive inline"
+                                id = "pathdir"
+                                alt=""
+                              />
+                              </div>
+在main.js添加点击方法
+$(function(){
+    $('#fl2img').click(function(){
+
+     $.ajax({
+     'url':'/postflimg/',  //访问的url地址
+     'dateType':'json',  //想要获得的返回数据类型
+     type:'post',
+     data:{
+       flmessage:$('#flmessage').val(),
+       flpramessage:$('#flpramessage').val(),
+       csrfmiddlewaretoken:$('[name=csrfmiddlewaretoken]').val(),
+     }
+     }).success(function(res){  //执行成功的回调函数（含有返回的数据（date））
+       alert("已成功生成")
+       console.log(res)
+       var res_Str = JSON.parse(res);
+       console.log(res_Str,typeof res_Str);
+       $('#pathdir').attr("src",res_Str['pathdir'])
+     })
+    })
+ })
+
+增加loading的方法
+在htmlz中
+
+<!--加载loading -->
+<div class="form-group" >
+<img  id="loading" style="display: none" src="{% static 'blog/images/ico/buenas-noches.gif' %}" width="5%" alt="" /></div>
+<!---->
+
+里面設置style="display: none",就是該img控件不显示
+
+在jsp设置ajax加载的时候规则
+
+$.ajaxSetup({
+            beforeSend: function () {
+             document.getElementById('loading').style.display = 'block';
+                //ajax请求之前
+            },
+            complete: function () {
+              document.getElementById('loading').style.display = 'none';
+                //ajax请求完成，不管成功失败
+            },
+            error: function () {
+              alert("网络不通");
+            }
+});
+
+
+保存文档及处理文档
+
+先在 html 中  写上传按钮 是 type="file"
+            <div class="slide-text">
+              <h1>上传需求文档</h1>
+                <!-- 创建一个文件上传表单 -->
+                <form id="uploadForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="file" id="file">
+                    <h3>指定处理页码</h3>
+                  <textarea
+                    name="filepageone"
+                    id="filepageone"
+                    required="required"
+                    class="form-control"
+                    rows="1"
+                    style="width: 40%"
+                    placeholder="起始页码"
+                  ></textarea>
+                  <p>-</p>
+                  <textarea
+                    name="filepagetwo"
+                    id="filepagetwo"
+                    required="required"
+                    class="form-control"
+                    rows="1"
+                    style="width: 40%"
+                    placeholder="终止页码"
+                  ></textarea>
+                    <p><button class="btn btn-common" type="button" onclick="uploadFile()">需求展示</button></p>
+                </form>
+                <!-- 显示上传结果的信息 -->
+                <p id="filemessage"></p>
+            </div>
+
+在 js 里写ajax函数，写入要传过去的文本，和需要返回的文本
+
+//11-15 增加网站上传功能
+function uploadFile() {
+    // 获取表单数据
+    var formData = new FormData($("#uploadForm")[0]);
+    // 发送Ajax请求
+    $.ajax({
+        url: "/filesolve/",
+        type: "POST",
+        data:{
+           formData:$("#uploadForm")[0],
+           filepageone:$('#filepageone').val(),
+           filepagetwo:$('#filepagetwo').val(),
+         },
+        processData: false, // 不处理数据
+        contentType: false, // 不设置内容类型
+        success: function (data) {
+            // 显示上传成功的信息
+            $("#filemessage").text("文件上传成功o(*￣▽￣*)ブ");
+        },
+        error: function (xhr, status, error) {
+            // 显示上传失败的信息
+            $("#filemessage").text("文件上传失败：" + error);
+        }
+    });
+}
+
+在urls 定义一个 urls         path('filesolve/', file2nlreq.filesolve),
+在html定义form提交表单，里面Input绑定type类型为file
+  <h1>上传需求文档</h1>
+                <!-- 创建一个文件上传表单 -->
+                <form id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="file" id="file">
+                    <h3>指定处理页码</h3>
+                  <textarea
+                    name="filepageone"
+                    id="filepageone"
+                    required="required"
+                    class="form-control"
+                    rows="1"
+                    style="width: 40%"
+                    placeholder="起始页码"
+                  ></textarea>
+                  <p>-</p>
+                  <textarea
+                    name="filepagetwo"
+                    id="filepagetwo"
+                    required="required"
+                    class="form-control"
+                    rows="1"
+                    style="width: 40%"
+                    placeholder="终止页码"
+                  ></textarea>
+                    <p><button class="btn btn-common" id="filebutton" name="filebutton" type="button" onclick="uploadFile()">需求展示</button></p>
+                </form>
+在js中写接收函数  使用form表单格式接收，里面的        contentType: false,
+        processData: false, 一定要设置，以表单结构传给filesolve
+//11-15 增加网站上传功能
+function uploadFile() {
+    // 获取表单数据
+    var form_data = new FormData();
+    var file_info = $('#file')[0];
+    console.log(file_info)
+    form_data.append('file', file_info.files[0]);
+    form_data.append('text1', $("#filepageone").val());
+    form_data.append('text2', $("#filepagetwo").val());
+    console.log(form_data)
+    $.ajax({
+        'url': "/filesolve/",
+        // 'dateType':'json',
+        type: "post",
+        contentType: false,
+        processData: false,
+        data: form_data,
+        success: function (data) {
+            // 显示上传成功的信息
+            $("#filemessage").text(data);
+        },
+        error: function (data) {
+            // 显示上传失败的信息
+            $("#filemessage").text(data);
+        }
+     })
+}
+在filesolve中定义form数据结构
+class filr2nlreq(forms.Form):
+    file = forms.FileField()
+    text1 = forms.CharField(widget=forms.Textarea)
+    text2 = forms.CharField(widget=forms.Textarea)
+
+定义req接收函数，其中filr2nlreq(req.POST, req.FILES) 和 form.is_valid(): 是必须的
+@csrf_exempt
+def filesolve(req):
+    if req.method == 'GET':
+        return render(req, 'blog/nl2ltl.html')
+    else:
+        form = filr2nlreq(req.POST, req.FILES)
+        print("-------------------form.is_valid()-------------------",form.is_valid())
+        # 获取表单数据和文件对象
+        if form.is_valid():
+            file = form.cleaned_data['file']
+            text1 = form.cleaned_data['text1']
+            text2 = form.cleaned_data['text2']
+            # print("进入了form.is_valid()--------------------------")
+            print("-----------text1-----------", text1)
+            print("-----------text2-----------", text2)
+            # 将文件保存到指定的位置
+            with open(os.path.join(MEDIA_ROOT, file.name), 'wb') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            # test_list=file2textlist(file.name, 15, 16)
+            try:
+                test_list = file2textlist(file.name, int(text1), int(text2))
+                print("-----------test_list--------------",'.\n'.join(test_list))
+                # 返回上传成功的信息
+                return HttpResponse('文件上传成功！')
+            # 返回一个文件上传页面
+            except:
+                return HttpResponse('文件非pdf格式！')
+        else:
+            # 创建一个空的表单
+            return HttpResponse('文件上传失败！')
+    # 将列表传给模板index.html
+    return HttpResponse('文件上传失败！')
+
+
+更改loading 的位置，放在网页的最下面 防止被其他图层 cover
+
+<img  id="loading" class="loadingcss" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;" src="{% static 'blog/images/ico/buenas-noches.gif' %}"  alt="" />
+
+
+将文件内容填充到页面以复选框的诶形式
+
+             # 将文件保存到指定的位置
+            with open(os.path.join(MEDIA_ROOT, file.name), 'wb') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            try:
+                # test_list=file2textlist(file.name, 15, 16)
+                text_list = file2textlist(file.name, int(text1), int(text2))
+                # print("-----------文件可转化语句--------------",'.\n'.join(text_list))
+                # 返回上传成功的信息
+                ret = {'text_list': text_list}
+                return HttpResponse(json.dumps(ret))、
+
+ 在后端给js的是 ret 字典格式
+
+             console.log("----------------------",textlist['text_list'])
+
+            var div = document.getElementById("textcontainer");
+            div.innerHTML = "";
+
+            $("#filemessage").text("文件上传成功");
+                for (var i = 0; i < list.length; i++) {
+                  // alert("进入list")
+                  // 创建一个 input 元素
+                  var input = $("<input>");
+                  // 设置 input 的类型为 checkbox 或 radio，根据你的需要修改
+                  input.attr("type", "checkbox");
+                  // 设置 input 的 name 属性，根据你的需要修改
+                  input.attr("name", "checkbox");
+                  input.attr("class", "labelautybg2");
+                  // 设置 input 的 value 属性为列表的对应值
+                  input.attr("value", list[i]);
+                  // 设置 input 的 data-labelauty 属性为列表的对应值，这会显示在 labelauty 的样式中
+                  input.attr("data-labelauty", list[i]);
+                  // 追加 input 到 div 元素中
+                  $("#textcontainer").append(input);
+                }
+                // 调用 labelauty 的方法
+                $("#textcontainer input").labelauty();
+        },
+        error: function (data) {
+            // 显示上传失败的信息
+            $("#filemessage").text("需求提取失败");
+  首先 json 解析， 其次 字典key值调用，然后手动生成input标签，绑定上jq的属性，最后调用 labelauty 的方法 动态生成
+
+                <h2>   </h2>
+               <div id="textcontainer"></div>
+      html 预留 div 框，把input 便签 add 进去
