@@ -1,0 +1,527 @@
+{% load static %}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Home | NL2FL</title>
+    <script type="text/javascript" src="{% static 'blog/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/jquery-labelauty.js' %}"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <script src="https://kit.fontawesome.com/72c42e442a.js" crossorigin="anonymous"></script>
+    <link href="{% static 'blog/bootstrap.min.css' %}" rel="stylesheet" />
+<!--    <link href="{% static 'blog/font-awesome.min.css' %}" rel="stylesheet" />-->
+    <link href="{% static 'blog/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'blog/lightbox.css' %}" rel="stylesheet" />
+    <link href="{% static 'blog/mian_2.css' %}" rel="stylesheet" />
+    <link href="{% static 'blog/responsive.css' %}" rel="stylesheet" />
+    <link href="{% static 'blog/jquery-labelauty.css' %}" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="{% static 'blog/js/html5shiv.js' %}"></script>
+      <script src="{% static 'blog/js/respond_min.js' %}"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="{% static 'blog/images/ico/icon-16.png' %}" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="{% static 'blog/images/ico/icon-144.ico' %}"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="{% static 'blog/images/ico/icon-114.ico' %}"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="{% static 'blog/images/ico/icon-72.ico' %}"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="{% static 'blog/images/ico/icon-57.ico' %}"
+    />
+  </head>
+  <body>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 overflow">
+            <div class="social-icons pull-right">
+              <ul class="nav nav-pills">
+                <li>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-dribbble"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-inverse" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <h1><img src="{% static 'blog/images/ICTT_logo_1.png' %}" alt="logo" /></h1>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown active">
+                <a href="index.html">主页</a>
+              </li>
+              <li class="dropdown">
+                <a href="#">形式化语言 <i class="fa fa-angle-down"></i></a>
+                <ul role="menu" class="sub-menu">
+                  <li><a href="#">线性时序逻辑LTL</a></li>
+                  <li><a href="#">计算树逻辑CTL</a></li>
+                  <li><a href="#">命题投影时序逻辑PPTL</a></li>
+                  <li><a href="#">动作时序逻辑TLA+</a></li>
+                  <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0304397523000154">联合时序逻辑UTL</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="blog.html">项目团队介绍<i class="fa fa-angle-down"></i></a>
+                <ul role="menu" class="sub-menu">
+                  <li><a href="blog.html"> </a></li>
+                  <li><a href="blogtwo.html"> </a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="portfolio.html"
+                  >形式化方法知识图谱 <i class="fa fa-angle-down"></i
+                ></a>
+                <ul role="menu" class="sub-menu">
+                  <li><a href="#"></a></li>
+                </ul>
+              </li>
+              <li><a href="shortcodes.html ">历史转化记录</a></li>
+            </ul>
+          </div>
+          <div class="search">
+            <form role="form">
+              <i class="fa fa-search"></i>
+              <div class="field-toggle">
+                <input
+                  type="text"
+                  class="search-form"
+                  autocomplete="off"
+                  placeholder="Search"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="home-slider">
+      <div class="container">
+        <div class="row">
+          <div class="main-slider">
+            <div class="slide-text">
+              <h1>上传需求文档</h1>
+                <!-- 创建一个文件上传表单 -->
+                <form id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="file" id="file">
+                    <h3>指定处理页码</h3>
+                  <textarea
+                    name="filepageone"
+                    id="filepageone"
+                    required="required"
+                    class="form-control"
+                    rows="1"
+                    style="width: 40%"
+                    placeholder="起始页码"
+                  ></textarea>
+                  <p>-</p>
+                  <textarea
+                    name="filepagetwo"
+                    id="filepagetwo"
+                    required="required"
+                    class="form-control"
+                    rows="1"
+                    style="width: 40%"
+                    placeholder="终止页码"
+                  ></textarea>
+                    <p><button class="btn btn-common" id="filebutton" name="filebutton" type="button" onclick="uploadFile()">需求展示</button></p>
+                </form>
+                <!-- 显示上传结果的信息 -->
+                <p id="filemessage" name="filemessage"></p>
+            </div>
+            <img
+              src="{% static 'blog/images/home/slider/birds1.png' %}"
+              class="slider-birds1"
+              alt="slider image"
+            />
+
+             <img
+              src="{% static 'blog/images/home/slider/station.png' %}"
+              class="slider-hill"
+              alt="slider image"
+            />
+
+            <img
+              src="{% static 'blog/images/home/slider/sun.png' %}"
+              class="slider-birds2"
+              alt="slider image"
+            />
+          </div>
+        </div>
+      </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+
+   <style>
+    ul { list-style-type: none;}
+    li { display: inline-block;}
+    li { margin: 10px 0;}
+    input.labelauty + label { font: 12px "Microsoft Yahei";}
+   </style>
+
+    <section id="clients1">
+    </section>
+
+    <section id="clients">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            </div>
+              <h2>   </h2>
+               <div id="textcontainer"></div>
+                <div class="col-sm-offset-4">
+                 <div class="form-group" id="textcontainerbutton"></div>
+                </div>
+            <div class="col-sm-offset-4" id="simloading">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+
+          <div class="container">
+
+                <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                  <img
+                    src="{% static 'blog/images/home/under_5.png' %}"
+                    class="img-responsive inline"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+                <div class="col-12 col-xs-2 ">
+              <div
+                  class="wow scaleIn"
+                  data-wow-duration="50ms"
+                  data-wow-delay="300ms"
+                >
+             <img src="{% static 'blog/images/home/icon13.png' %}" alt="" />
+                  <h2><a> 主题选取 </a></h2>
+            </div>
+
+            </div>
+                <div class="col-11 col-xs-10 " style="height:220px">
+                <li><input type="checkbox"  style="background-color: #cc9b59" name="flcheckbox" disabled checked data-labelauty="形式化语言"></li>
+                {% for i in views_list%}
+                 <li><input type="checkbox" style="background-color: #cc9b59"  name="flcheckbox" data-labelauty={{i}}></li>
+                {% endfor %}
+                {% csrf_token %}
+            </div>
+
+                <div class="col-12 col-xs-2">
+                <div
+                  class="wow scaleIn"
+                  data-wow-duration="50ms"
+                  data-wow-delay="300ms"
+                >
+             <img src="{% static 'blog/images/home/icon12.png' %}" alt="" />
+                  <h2><a class="hover1">关键词选取</a></h2>
+
+                </div>
+            </div>
+                <div class="col-11 col-xs-10" style="height:220px">
+                <li><input type="checkbox" class="labelautybg" name="flpracheckbox" disabled checked data-labelauty="形式化方法"></li>
+                {% for i in views_list_1%}
+                 <li><input type="checkbox" class="labelautybg" name="flpracheckbox" data-labelauty={{i}}></li>
+                {% endfor %}
+                {% csrf_token %}
+            </div>
+
+                <script>
+                $(function(){
+                    $(':input').labelauty();
+                });
+                </script>
+
+                <div class="col-md-5 col-sm-6">
+                   <form
+                     id="main-nl2fl-form"
+                     name="nl2fl-form"
+                     method='post'
+                     action=''
+                   >
+                       {% csrf_token %}
+                   <div class="form-group">
+                            <select class="form-control"  id="ChatGptversion" onchange="selectOnchang(this)">
+                                <option value="gpt-3.5-turbo">ChatGpt 3.5</option>
+                                <option value="gpt-2.0-turbo">ChatGpt 2.0</option>
+                                <option value="gpt-3.0-turbo">ChatGpt 3.0</option>
+                                <option value="gpt-4.0-turbo">ChatGpt 4.0</option>
+                            </select>
+                            </div>
+
+                            <div class="form-group">
+                              <textarea
+                                type="text"
+                                name="ChatGptAPIname"
+                                id="ChatGptAPIname"
+                                class="form-control"
+                                rows="1"
+                                placeholder="ChatGpt API"
+                              ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                              <textarea
+                                name="nlmessage"
+                                id="nlmessage"
+                                required="required"
+                                class="form-control"
+                                rows="9"
+                                placeholder="输入自然语言描述的需求"
+                              ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                              <input
+                                type="button"
+                                id="nl2flsubmit"
+                                class="btn btn-submit"
+                                width="40px"
+                                value="进行转化"
+                              />
+
+                            </div>
+                         </form>
+                   </div>
+                <div class="col-md-6 col-sm-6">
+                                <!--加载loading -->
+<!--                              <div class="form-group" >-->
+<!--                               <img  id="loading" class="loadingcss" style="display: none; " src="{% static 'blog/images/ico/buenas-noches.gif' %}" width="5%" alt="" /></div>-->
+<!--                              &lt;!&ndash;&ndash;&gt;-->
+                            <div class="form-group">
+                              <textarea
+                                name="flmessage"
+                                id="flmessage"
+                                required="required"
+                                class="form-control"
+                                rows="2"
+                                placeholder="形式化公式"
+                              ></textarea>
+                            </div>
+                            <div class="form-group">
+                              <textarea
+                                name="flpramessage"
+                                id="flpramessage"
+                                required="required"
+                                class="form-control"
+                                rows="6"
+                                placeholder="形式化公式的解释"
+                              ></textarea>
+
+                              <div class="form-group">
+                              <input
+                                type="button"
+                                id="fl2img"
+                                class="btn btn-submit"
+                                width="40px"
+                                value="生成公式图片"
+                              />
+                              </div>
+
+                              <div class="form-group">
+                              <img
+                                src="{% static 'blog/images/home/under_7.png' %}"
+                                class="img-responsive inline"
+                                alt=""
+                              />
+                              </div>
+
+                            </div>
+                            </div>
+                              <div class="col-sm-11 text-center bottom-separator">
+                              <img
+                                src=""
+                                class="img-responsive inline"
+                                id = "pathdir"
+                                alt=""
+                              />
+                              </div>
+                <div class="col-sm-11 text-center bottom-separator">
+                  <img
+                    src="{% static 'blog/images/home/under_6.png' %}"
+                    class="img-responsive inline"
+                    alt=""
+                  />
+                </div>
+         </div>
+
+          <div class="container">
+
+          <div class="col-md-4 col-sm-6">
+            <div class="testimonial bottom">
+              <h2>项目负责人</h2>
+              <div class="media">
+                <div class="pull-left">
+                  <a href="https://scholar.google.com.hk/citations?user=c707dNUAAAAJ&hl=zh-CN&oi=sra"><img src="{% static 'blog/images/user/binyu.png' %}" alt="" /></a>
+                </div>
+                <div class="media-body">
+                  <blockquote>
+                    计算理论与技术研究所科研秘书.
+                  </blockquote>
+                  <h3><a href="https://faculty.xidian.edu.cn/YUBIN/zh_CN/index.htm">—— 于斌</a></h3>
+                </div>
+              </div>
+              <div class="media">
+                <div class="pull-left">
+                  <a href="#"><img src="{% static 'blog/images/user/zhima.png' %}" alt="" /></a>
+                </div>
+                <div class="media-body">
+                  <blockquote>
+                  构建此项目源于chatgpt推进了性质挖掘工作方式的改革.
+                  </blockquote>
+                  <h3><a href="">—— 马智</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="contact-info bottom">
+              <h2>联系方式</h2>
+              <address>
+                E-mail:
+                <a
+                  href="mailto:byu@xidian.edu.cn"
+                  >byu@xidian.edu.cn
+                </a>
+                <br />
+                Phone: (+86) 13991914452 <br />
+              </address>
+              <h2>Address</h2>
+              <address>
+                No. 2 Taibai South Road, <br />
+                Yanta District, <br />
+                Shaanxi, Xi'an <br />
+                China <br />
+              </address>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12">
+            <div class="contact-form bottom">
+              <h2>联系我们</h2>
+              <form
+                id="main-contact-form"
+                name="contact-form"
+                method="post"
+                action=''
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    required="required"
+                    placeholder="您的姓名"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    required="required"
+                    placeholder="您的电子邮件"
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    name="message"
+                    id="message"
+                    required="required"
+                    class="form-control"
+                    rows="8"
+                    placeholder="想说的话"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    name="submit"
+                    class="btn btn-submit"
+                    value="Submit"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+
+          </div>
+
+
+          <img  id="loading" class="loadingcss" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;  width: 10%; height: 10%;  " src="{% static 'blog/images/ico/buenas-noches.gif' %}"  alt="" />
+
+          <div class="col-sm-12">
+
+          <div class="copyright-text text-center">
+              <p>&copy; The NL2FL project.</p>
+              <p>
+                Designed by
+                <a target="_blank" href="#">Xiaobing Wang and Chunyi Li </a>
+              </p>
+            </div>
+
+          </div>
+    </footer>
+
+
+    <script data-cfasync="false" src="{% static 'blog/js/email-decode.min.js'  %}" ></script>
+
+    <script type="text/javascript" src="{% static 'blog/js/lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/wow.min.js' %}"></script>
+
+
+  </body>
+</html>
