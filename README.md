@@ -40,8 +40,6 @@ Then, run server on port 8000:
 $ python manage.py runserver 8000
 ```
 
-## Post Installation
-
 Go to the web browser and visit `http://localhost:8000/hello`
 
 ### Others
